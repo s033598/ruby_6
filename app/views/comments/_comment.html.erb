@@ -1,0 +1,15 @@
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %> <!-- komentatoriaus vardas -->
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %> <!-- komentaro turinys/tekstas -->
+</p>
+ 
+<p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %> <!-- jei paspaudem mygtuka trint komentara, musu paklaus ar tikrai ir tik po patvirtinimo istrins -->
+</p>

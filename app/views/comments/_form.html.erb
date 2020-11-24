@@ -1,0 +1,13 @@
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %> <!-- sukuriam forma palei modeli article -->
+  <p>
+    <%= form.label :commenter %><br> <!-- Commenter label -->
+    <%= form.text_field :commenter %> <!-- input html elementas -->
+  </p>
+  <p>
+    <%= form.label :body %><br> <!-- Body label -->
+    <%= form.text_area :body %> <!-- textarea html elementas -->
+  </p>
+  <p>
+    <%= form.submit %> <!-- mygtukas, su kuriuo issiusim forma -->
+  </p>
+<% end %>

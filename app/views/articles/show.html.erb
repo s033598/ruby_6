@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %> <!-- atvaizduojam straipsnio pavadinima -->
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %> <!-- atvaizduojam straipsnio turini / teksta -->
+</p>
+ 
+<h2>Comments</h2>
+<%= render @article.comments %> <!-- atvaizduojam komentarus priklausancius siam straipsniui -->
+ 
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %> <!-- praktiskai itraukiam comments/_form.html.erb turini i sita puslapi -->
+ 
+<%= link_to 'Edit', edit_article_path(@article) %> | <!-- mygtukas redaguoti -->
+<%= link_to 'Back', articles_path %> <!-- mygtukas atgal -->

@@ -1,0 +1,21 @@
+<h1>Listing Articles</h1>
+<%= link_to 'New article', new_article_path %> <!-- mygtukas i puslapi, kur galima kurt nauja straipsni -->
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @articles.each do |article| %> <!-- spausdinam visus straipsnius is duombazes, pridedam mygtukus prie kiiekvieno perziurai, redagavimui ar naikinimui -->
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td> <!-- jei sumastom istrint straipsni, mums ismes lentele su klausimu, ar tikrai tai norim padaryt -->
+    </tr>
+  <% end %>
+</table>
